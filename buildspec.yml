@@ -8,8 +8,7 @@ phases:
       - aws --version
       - aws ecr get-login-password --region us-east-1 | docker login --username
         AWS --password-stdin 852090507207.dkr.e
-      - IMAGE_TAG=$(echo release-$CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c
-        1-10)
+      - IMAGE_TAG=$(echo release-$CODEBUILD_RESOLVED_SOURCE_VERSION | cut -c 1-10)
   build:
     commands:
       - echo Build started on `date`
